@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="keys">
+            <div data-key="65" class="key">
+                <kbd>A</kbd>
+                <span class="sound">Clap</span>
+            </div>
+              <div data-key="83" class="key">
+                <kbd>S</kbd>
+                <span class="sound">hihat</span>
+            </div>
+              <div data-key="68" class="key">
+                <kbd>D</kbd>
+                <span class="sound">Kick</span>
+            </div>
+              <div data-key="70" class="key">
+                <kbd>F</kbd>
+                <span class="sound">openhat</span>
+            </div>
+              <div data-key="71" class="key">
+                <kbd>G</kbd>
+                <span class="sound">boom</span>
+            </div>
+              <div data-key="72" class="key">
+                <kbd>H</kbd>
+                <span class="sound">ride</span>
+            </div>
+              <div data-key="74" class="key">
+                <kbd>J</kbd>
+                <span class="sound">snare</span>
+            </div>
+              <div data-key="75" class="key">
+                <kbd>k</kbd>
+                <span class="sound">tom</span>
+            </div>
+              <div data-key="76" class="key">
+                <kbd>L</kbd>
+                <span class="sound">tink</span>
+            </div>
+        </div>
+     <div class="btn">
+          
+              <button class="stop" onclick="stopMusic()">stop</button>
+     </div>
+
+        <audio data-key="65" src="./sounds/trap-hihat-32067.mp3"></audio>
+      <audio data-key="83" src="./sounds/ohat-88576.mp3"></audio>
+      <audio data-key="68" src="./sounds/kick-hardstyle-149795.mp3"></audio>
+      <audio data-key="70" src="./sounds/trap-hihat-32067.mp3"></audio>
+        <audio data-key="71" src="./sounds/impact-cinematic-boom-05-352465.mp3"></audio>
+        <audio data-key="72" src="./sounds/base-for-technokick-plus-ride-plus-bassline-345925.mp3"></audio>
+        <audio data-key="74" src="./sounds/snare-piano-cello-352620.mp3"></audio>
+        <audio data-key="75" src="./sounds/toms_2-93267.mp3"></audio>
+        <audio data-key="76" src="./sounds/bouncy-ball-on-tile-95978.mp3"></audio>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>

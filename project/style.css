@@ -1,0 +1,99 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.todo-app {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #4caf50;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  background: #f9f9f9;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.filter {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.5rem;
+}
+.filter-all{
+    background-color: #45a049;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.6;
+}
+.check{
+     text-decoration: line-through;
+  color: gray;
+  opacity: 0.6;
+}

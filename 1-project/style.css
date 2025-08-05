@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://wallpapercave.com/wp/wp2977938.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.keys{
+    display: flex;
+    gap: 20px;
+  
+}
+
+.key{
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 0px 0px 20px #111111;
+    transition: all 0.3s;
+    border-radius: 5px;
+    color: white;
+    z-index: 000;
+}
+.key:hover{
+    background-color: darkmagenta;
+}
+.key kbd{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+.key span{
+    font-size: 20px;
+}
+.key.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
+
+.btn{
+    gap: 50px;
+    margin-top: 20px;
+}
+.btn button{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 600;
+    background: purple;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s;
+  
+}
+
+.btn button:hover{
+    background-color: darkmagenta;
+     transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+
+}
