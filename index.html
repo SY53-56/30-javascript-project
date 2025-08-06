@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form with this, call, apply, bind</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      margin: 5px 0;
+      padding: 8px;
+    }
+    #output {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User Info Form</h2>
+
+  <label>Name:</label><br>
+  <input type="text" id="nameInput" placeholder="Enter your name"><br>
+
+  <label>Email:</label><br>
+  <input type="email" id="emailInput" placeholder="Enter your email"><br>
+
+  <button onclick="showUserInfo()">Submit</button>
+
+  <div id="output"></div>
+
+  <script>
+    function displayInfo(prefix, suffix) {
+      const outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = `${prefix} Name: ${this.name}, Email: ${this.email} ${suffix}`;
+
+    }
+
+    function showUserInfo(evet) {
+      const name = document.getElementById("nameInput").value;
+      const email = document.getElementById("emailInput").value;
+         
+      const user = {
+        name: name,
+        email: email
+      };
+
+      // 🟢 Using call
+      displayInfo.call(user, "👉", "✔️");
+
+      // 🔵 Try apply:
+      // displayInfo.apply(user, ["👉", "✔️"]);
+
+      // 🔴 Try bind:
+      // const boundDisplay = displayInfo.bind(user, "👉", "✔️");
+      // boundDisplay();
+    }
+  </script>
+
+</body>
+</html>
