@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Calculator</title>
+  <style>
+    /* Calculator container */
+    .calculator {
+      width: 320px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+
+    /* Display */
+    .display {
+      background: #000;
+      color: #0f0;
+      font-size: 2.5rem;
+      text-align: right;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      user-select: none;
+      min-height: 50px;
+      overflow-x: auto;
+    }
+
+    /* Buttons grid */
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 15px;
+    }
+
+    /* Buttons style */
+    button {
+      padding: 20px;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 8px;
+      background: #444;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+      user-select: none;
+    }
+
+    button:hover {
+      background: #666;
+    }
+
+    /* Special buttons */
+    .operator {
+      background: #f57c00;
+      color: #fff;
+    }
+
+    .operator:hover {
+      background: #ff9800;
+    }
+
+    .equals {
+      background: #4caf50;
+      color: #fff;
+      grid-column: span 2;
+    }
+
+    .equals:hover {
+      background: #66bb6a;
+    }
+
+    .clear {
+      background: #e53935;
+      color: #fff;
+    }
+
+    .clear:hover {
+      background: #ef5350;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons">
+      <button class="clear" id="clear">C</button>
+      <button class="operator" data-operator="/">÷</button>
+      <button class="operator" data-operator="*">×</button>
+      <button class="operator" data-operator="-">−</button>
+
+      <button data-number="7">7</button>
+      <button data-number="8">8</button>
+      <button data-number="9">9</button>
+      <button class="operator" data-operator="+">+</button>
+
+      <button data-number="4">4</button>
+      <button data-number="5">5</button>
+      <button data-number="6">6</button>
+ <button class="operator" data-operator="+">%</button>
+   
+
+      <button data-number="1">1</button>
+      <button data-number="2">2</button>
+      <button data-number="3">3</button>
+      <button data-number=".">.</button>
+      <button class="equals" id="equals">=</button>
+
+      <button data-number="0" style="grid-column: span 2;">0</button>
+      
+      <button id="empty2" disabled style="background:none;cursor:default;"></button>
+    </div>
+    <script src="index.js"></script>
+  </div>
+  </body>
+  </html>

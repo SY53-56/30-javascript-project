@@ -1,100 +1,88 @@
+const boxes = document.querySelectorAll(".tic-box");
+const result = document.querySelector(".status")
+let currentPlayer = "O";
+let board = Array(9).fill("");
+let gameActive = false;
+let p1Element, p2Element, player1Name, player2Name;
 
+function startGame() {
+  p1Element = document.querySelector("#p1");
+  p2Element = document.querySelector("#p2");
+  player1Name = p1Element.value.trim();
+  player2Name = p2Element.value.trim();
 
-
-/*
- const value1 = document.querySelectorAll(".value1");
-  const value2 = document.querySelectorAll(".value2");
-  const tic = document.querySelectorAll(".tic-box")
-  console.log
-
-  // Example: hide both on click
-value1.forEach((items)=>{
-  items.addEventListener("click",function(){
-       value2.forEach((v)=>{
-        v.style.display = 'none'
-       })
-  })
-})
-
-value2.forEach((items)=>{
-    items.addEventListener("click",function(){
-        value1.style.display = "none"
-    })
-})*/
-
-/*
-function playerRound() {
-  const player1 = document.querySelector(".player1");
-  const player2 = document.querySelector(".player2");
-
-  const p = document.createElement("p");
-
-  if (player1) {
-    p.textContent = "Player 1 turn now";
-
-  } else if (player2) {
-    p.textContent = "Player 2 turn now";
-  } else {
-    p.textContent = "No player found";
+  if (!player1Name || !player2Name) {
+    alert("दोनों खिलाड़ियों के नाम डालें");
+    return;
   }
 
-  const container = document.querySelector(".tic");
-  if (container) {
-    container.appendChild(p);
+  gameActive = true;
+  currentPlayer = "O";
+  board.fill("");
+  boxes.forEach(box => box.textContent = "");
+  const h1 =document.createElement("h1")
+  h1.textContent = currentPlayer
+    currentPlayer = currentPlayer === "O" ? "X" : "O";
+    h1.style.color ="black"
+    box.appendChild(h1)
+  updateHighlight();
+  result.textContent = `${player1Name}'s turn (O)`;
+}
+
+boxes.forEach((box, index) => {
+  box.addEventListener("click", () => {
+    if (!gameActive || board[index] !== "") return;
+
+    board[index] = currentPlayer;
+    box.textContent = currentPlayer;
+
+    if (checkWin()) {
+      gameActive = false;
+      result.textContent = currentPlayer === "O" ? `${player1Name} Wins!` : `${player2Name} Wins!`;
+      return;
+    }
+
+    if (!board.includes("")) {
+      gameActive = false;
+      result.textContent = "Draw!";
+      return;
+    }
+
+    currentPlayer = currentPlayer === "O" ? "X" : "O";
+    updateHighlight();
+  });
+});
+
+function updateHighlight() {
+  if (currentPlayer === "O") {
+    p1Element.classList.add("show");
+    p2Element.classList.remove("show");
+    result.textContent = `${player1Name}'s turn (O)`;
+  } else {
+    p2Element.classList.add("show");
+    p1Element.classList.remove("show");
+    result.textContent = `${player2Name}'s turn (X)`;
   }
 }
 
-playerRound()*/
-const player1Btn = document.querySelector(".player1");
-  const player2Btn = document.querySelector(".player2");
-  const container = document.querySelector(".tic");
-  const round = document.querySelector(".game")
-const value1 = document.querySelectorAll(".value1");
-const value2 = document.querySelectorAll(".value2")
-const allBox = document.querySelectorAll(".tic-box")
+function checkWin() {
+  const winConditions = [
+    [0,1,2],[3,4,5],[6,7,8], // rows
+    [0,3,6],[1,4,7],[2,5,8], // cols
+    [0,4,8],[2,4,6]          // diagonals
+  ];
 
-let currentPlayer = "player1"; // start with player1
-
-value1.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const box = btn.closest(".tic-box");
-    const value2 = box.querySelector(".value2");
-
-    if (value2) {
-      value2.style.display = "none";
-    }
-
-   
+  return winConditions.some(condition => {
+    const [a,b,c] = condition;
+    return board[a] && board[a] === board[b] && board[a] === board[c];
   });
-});
+}
 
-value2.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const box = btn.closest(".tic-box");
-    const value1 = box.querySelector(".value1");
-
-    if (value1) {
-      value1.style.display = "none";
-    }
-
-  });
-});
-
-  
-
-allBox.forEach((items)=>{
-  items.addEventListener("click",()=>{
-  if (items.classList.contains("played")) return;
-  if(currentPlayer==="player1"){
-    items.style.backgroundColor  = "red"
-    player1Btn.style.backgroundColor = "red"
-    currentPlayer= "player2"
-    round.textContent ="player1 turn"
-  }else{
-    items.style.backgroundColor = "green"
-    currentPlayer= "player1"
-    player2Btn.style.backgroundColor = "green"
-       round.textContent ="player2 turn"
-  }
-  })
-})
+function resetGame() {
+  board.fill("");
+  boxes.forEach(box => box.textContent = "");
+  gameActive = false;
+  result.textContent = "";
+  p1Element.classList.remove("show");
+  p2Element.classList.remove("show");
+}

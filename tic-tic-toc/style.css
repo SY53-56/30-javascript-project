@@ -1,0 +1,4 @@
+.show {
+  background-color: blueviolet;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4); /* soft shadow with transparency */
+}

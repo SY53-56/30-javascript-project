@@ -30,12 +30,13 @@ form.addEventListener("submit", function (evt) {
   const div = document.createElement("div")
   // Create table
   const table = document.createElement("table");
-  table.border = "1";
+  table.style.border = "1";
   table.style.borderCollapse = "collapse";
  
 
   // Header row
   const header = document.createElement("tr");
+  header.classList.add("tr")
   header.innerHTML = `
     <th>Year</th>
     <th>Starting Amount</th>

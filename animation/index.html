@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      
+</head>
+<body>
+<!-->
+
+    <div class=" w-full  flex justify-center gap-7 items-center">
+        <div class="main w-[400px] shadow-lg rounded-lg mt-20 px-3 py-3 flex flex-col justify-center items-center">
+             <button class="toggle-button px-4  bg-black rounded-lg text-white cursor-pointer">dark</button>
+         <div class="flex gap-5 justify-center">
+               <h1 class="text-center text-4xl font-bold mt-2 mb-4">To do list</h1>
+          
+         </div>
+            <div>
+               <input type="text" id="text" placeholder="Add a task..." class="flex-1 p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+    <button class="btn px-4 py-2 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600">Add</button>
+            </div>
+            <div class="result  ">
+    <div></div>
+            </div>
+          
+        </div>
+         <div class="main w-[400px] h-[500px] shadow-lg rounded-xl mt-20 p-6 bg-amber-500 flex flex-col">
+  <h1 class="text-center text-4xl font-bold mb-6">Task Tracker</h1>
+
+  <!-- Progress bar / range selector 
+  <div class="flex items-center gap-4 mb-6">
+    <label for="range" class="text-lg font-medium">set task no:</label>
+    <input type="range" id="range" min="0" max="10"  value="0" class="w-40 h-2 rounded-lg bg-gray-200 accent-blue-500">
+  </div>
+
+  <!-- Stats 
+  <div class="flex justify-between mb-6">
+    <p class="text-lg">Tasks: <span class="tasks font-semibold">0</span></p>
+    <p class="text-lg">Completed: <span class="completed font-semibold">0</span></p>
+  </div>
+
+</div>
+-->
+
+<div >
+  <div class="anim  w-32 h-28 bg-red-500">
+
+</div>
+<div class="anim  w-32 h-28 bg-blue-500">
+
+</div>
+<div class="anim  w-32 h-28 bg-green-500">
+
+</div>
+<div class="anim  w-32 h-28 bg-yellow-500">
+
+</div>
+<div class="anim  w-32 h-28 bg-purple-600">
+
+</div>
+<div class="anim  w-32 h-28 bg-violet-600">
+
+</div>
+</div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
+</html>

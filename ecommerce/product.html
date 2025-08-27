@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products</title>
+  <script src="products.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 ">
+  <header class="flex w-full items-center justify-between  px-4 py-3 bg-green-500 shadow-xl">
+    <div>
+  <h1 class="text-4xl font-bold text-white "><i>Garden fruit</i></h1>
+    </div>
+    <nav>
+      <ul class="flex gap-6 text-white items-center justify-center">
+        <li>Home</li>
+         <li>product</li>
+        <li>Abouts</li>
+        <li>Contact</li>
+       <li ><a href="./cart.html" >cart</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h1 class="text-3xl font-bold mb-6 text-center">Product List</h1>
+  <div id="product-list" class="grid grid-cols-1 sm:grid-cols-3 gap-6"></div>
+
+  <a href="cart.html" class="inline-block mt-8 px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">
+    Go to Cart
+  </a>
+  <script src="product.js"></script>
+</body>
+</html>

@@ -12,13 +12,14 @@ body{
 
 .main{
     width: 800px;
-    height: 600px;
+    height: auto;
     background-color: rgb(80, 74, 74);
     margin-top: 40px;
     border-radius: 10px;
     padding: 30px 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 .box{
@@ -44,6 +45,7 @@ form{
 .invest{
     display: flex;
     flex-direction:column;
+   
 }
 .invest label{
     color: white;
@@ -51,7 +53,8 @@ form{
 }
 .invest input{
     padding: 13px 40px;
- 
+  border: 1px solid black;
+  border-radius: 5px;
 }
 form button{
     padding: 5px 30px;
@@ -64,4 +67,36 @@ form button{
 }
 .btn:hover{
     background-color: #02815d;
+}
+.show{
+    width: 600px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.data-table {
+  margin: 20px 0;
+  overflow-x: auto;
 }

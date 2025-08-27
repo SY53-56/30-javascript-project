@@ -1,73 +1,97 @@
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+const input = document.querySelector(".input");
+const store = document.querySelector(".task-list");
+const btnAdd = document.querySelector(".btn");
+const taskNum = document.querySelector(".score");
+const completeedTask = document.querySelector(".completeTask")
 
-const taskList = document.querySelector(".task-list");
-const taskInput = document.querySelector("input");
-const addBtn = document.querySelector("button");
-const filterBtns = document.querySelectorAll(".filter");
+// Page load hone ke baad tasks render karo
+window.addEventListener("DOMContentLoaded", loadTasks);
 
-function saveTasks() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+ let completedScore= 0;
+function todoData() {
+    const inputValue = input.value.trim();
+    if (!inputValue) return;
+
+    const newTask = { id: Date.now(), text: inputValue }; // unique object
+    showData(newTask);       
+    saveData(newTask);       
+    updateScoreFromStorage();  // score update karo
+
+    input.value = "";
+};
+
+function showData(task) {
+    const div = document.createElement("div");
+    div.classList.add("taskDiv");
+    div.dataset.id = task.id;
+
+    const p = document.createElement("p");
+    p.textContent = task.text;
+    
+    p.addEventListener("click",function(){
+        p.style.textDecoration = "line-through"
+        completedScore ++
+    })
+    
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("buttons");
+
+    const updateBtn = document.createElement("button");
+    updateBtn.textContent = "update";
+    updateBtn.addEventListener("click", () => {
+        const newValue = prompt("Update task:", p.textContent);
+        if (newValue === null || newValue.trim() === "") return;
+        updateData(Number(div.dataset.id), newValue.trim());
+        p.textContent = newValue.trim();
+    });
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "delete";
+    deleteBtn.style.backgroundColor = "red";
+    deleteBtn.addEventListener("click", () => {
+        deleteData(Number(div.dataset.id));
+        store.removeChild(div);
+        updateScoreFromStorage();  // score update karo
+    });
+
+    buttonContainer.appendChild(updateBtn);
+    buttonContainer.appendChild(deleteBtn);
+    div.appendChild(p);
+    div.appendChild(buttonContainer);
+    store.appendChild(div);
 }
 
-function renderTasks(filter = "all") {
-  taskList.innerHTML = ""; // ✅ Corrected: Clear previous tasks from the list
-  tasks.forEach((task, index) => {
-    const show =
-      filter === "all" ||
-      (filter === "active" && !task.completed) ||
-      (filter === "completed" && task.completed);
+function saveData(task) {
+    const tasks = JSON.parse(localStorage.getItem("data") || "[]");
+    tasks.push(task);
+    localStorage.setItem("data", JSON.stringify(tasks));
+}
 
-    if (show) {
-      const li = document.createElement("li");
-      li.className = "task";
-      if (task.completed) li.classList.add("completed");
-
-      // ✅ Create label element
-      const label = document.createElement("span");
-      label.textContent = task.text;
-
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.checked = task.completed;
-
-      // ✅ Toggle complete on change
-      checkbox.addEventListener("change", () => {
-        task.completed = checkbox.checked;
-        saveTasks();
-        renderTasks(filter);
-      });
-
-      li.appendChild(checkbox);  // checkbox first
-      li.appendChild(label);     // then text
-      taskList.appendChild(li);
+function updateData(id, newTask) {
+    const tasks = JSON.parse(localStorage.getItem("data") || "[]");
+    const index = tasks.findIndex(value => value.id === id);
+    if (index !== -1) {
+        tasks[index].text = newTask;
+        localStorage.setItem("data", JSON.stringify(tasks));
     }
-  });
 }
 
-addBtn.addEventListener("click", () => {
-  const text = taskInput.value.trim();
-  if (text !== "") {
-    tasks.push({ text, completed: false });
-    saveTasks();
-    renderTasks();
-    taskInput.value = "";
-  }
-});
+function deleteData(id) {
+    let tasks = JSON.parse(localStorage.getItem("data") || "[]");
+    tasks = tasks.filter(value => value.id !== id);
+    localStorage.setItem("data", JSON.stringify(tasks));
+}
 
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelector(".filter.active")?.classList.remove("active");
-    btn.classList.add("active");
-    const filter = btn.dataset.filter;
-    renderTasks(filter);
-  });
-});
+btnAdd.addEventListener("click", todoData);
 
-renderTasks();
+function loadTasks() {
+    let tasks = JSON.parse(localStorage.getItem("data") || "[]");
+    tasks.forEach(task => showData(task));
+    updateScoreFromStorage(); // page load hone ke baad bhi score update
+}
 
-
-
-// ✅ Listen for checkbox toggle to mark completed tasks
-
-
-
+function updateScoreFromStorage() {
+    const tasks = JSON.parse(localStorage.getItem("data") || "[]");
+    taskNum.textContent = tasks.length; // UI update hamesha localStorage ke hisaab se
+    completeedTask.textContent = completedScore
+}

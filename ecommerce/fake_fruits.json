@@ -1,0 +1,352 @@
+[
+  {
+    "id":1,
+    "name":"Apple",
+    "title":"Tropical Apple \u2014 perfect for smoothies",
+    "price":1.02,
+    "image":"https:\/\/placehold.co\/320x320?text=Apple"
+  },
+  {
+    "id":2,
+    "name":"Banana",
+    "title":"Sweet Banana \u2014 for salads",
+    "price":2.84,
+    "image":"https:\/\/placehold.co\/320x320?text=Banana"
+  },
+  {
+    "id":3,
+    "name":"Orange",
+    "title":"Aromatic Orange \u2014 perfect for smoothies",
+    "price":7.02,
+    "image":"https:\/\/placehold.co\/320x320?text=Orange"
+  },
+  {
+    "id":4,
+    "name":"Grape",
+    "title":"Farm\u2011fresh Grape \u2014 perfect for smoothies",
+    "price":6.22,
+    "image":"https:\/\/placehold.co\/320x320?text=Grape"
+  },
+  {
+    "id":5,
+    "name":"Strawberry",
+    "title":"Fresh Strawberry \u2014 for snacks",
+    "price":1.65,
+    "image":"https:\/\/placehold.co\/320x320?text=Strawberry"
+  },
+  {
+    "id":6,
+    "name":"Blueberry",
+    "title":"Juicy Blueberry \u2014 naturally sweet",
+    "price":6.33,
+    "image":"https:\/\/placehold.co\/320x320?text=Blueberry"
+  },
+  {
+    "id":7,
+    "name":"Raspberry",
+    "title":"Farm\u2011fresh Raspberry \u2014 for salads",
+    "price":7.38,
+    "image":"https:\/\/placehold.co\/320x320?text=Raspberry"
+  },
+  {
+    "id":8,
+    "name":"Blackberry",
+    "title":"Aromatic Blackberry \u2014 naturally sweet",
+    "price":4.65,
+    "image":"https:\/\/placehold.co\/320x320?text=Blackberry"
+  },
+  {
+    "id":9,
+    "name":"Pineapple",
+    "title":"Sun\u2011ripened Pineapple \u2014 low\u2011cal snack",
+    "price":3.35,
+    "image":"https:\/\/placehold.co\/320x320?text=Pineapple"
+  },
+  {
+    "id":10,
+    "name":"Mango",
+    "title":"Extra Large Mango \u2014 for snacks",
+    "price":7.77,
+    "image":"https:\/\/placehold.co\/320x320?text=Mango"
+  },
+  {
+    "id":11,
+    "name":"Papaya",
+    "title":"Premium Papaya \u2014 seasonal special",
+    "price":4.68,
+    "image":"https:\/\/placehold.co\/320x320?text=Papaya"
+  },
+  {
+    "id":12,
+    "name":"Kiwi",
+    "title":"Sweet Kiwi \u2014 great for desserts",
+    "price":2.77,
+    "image":"https:\/\/placehold.co\/320x320?text=Kiwi"
+  },
+  {
+    "id":13,
+    "name":"Watermelon",
+    "title":"Seedless Watermelon \u2014 chef\u2019s choice",
+    "price":1.73,
+    "image":"https:\/\/placehold.co\/320x320?text=Watermelon"
+  },
+  {
+    "id":14,
+    "name":"Cantaloupe",
+    "title":"Zesty Cantaloupe \u2014 perfect for smoothies",
+    "price":4.09,
+    "image":"https:\/\/placehold.co\/320x320?text=Cantaloupe"
+  },
+  {
+    "id":15,
+    "name":"Honeydew",
+    "title":"Crisp Honeydew \u2014 low\u2011cal snack",
+    "price":3.22,
+    "image":"https:\/\/placehold.co\/320x320?text=Honeydew"
+  },
+  {
+    "id":16,
+    "name":"Peach",
+    "title":"Fresh Peach \u2014 seasonal special",
+    "price":5.02,
+    "image":"https:\/\/placehold.co\/320x320?text=Peach"
+  },
+  {
+    "id":17,
+    "name":"Nectarine",
+    "title":"Organic Nectarine \u2014 kids love it",
+    "price":1.51,
+    "image":"https:\/\/placehold.co\/320x320?text=Nectarine"
+  },
+  {
+    "id":18,
+    "name":"Plum",
+    "title":"Sweet Plum \u2014 antioxidant rich",
+    "price":6.48,
+    "image":"https:\/\/placehold.co\/320x320?text=Plum"
+  },
+  {
+    "id":19,
+    "name":"Cherry",
+    "title":"Extra Large Cherry \u2014 chef\u2019s choice",
+    "price":6.1,
+    "image":"https:\/\/placehold.co\/320x320?text=Cherry"
+  },
+  {
+    "id":20,
+    "name":"Apricot",
+    "title":"Aromatic Apricot \u2014 perfect for smoothies",
+    "price":1.21,
+    "image":"https:\/\/placehold.co\/320x320?text=Apricot"
+  },
+  {
+    "id":21,
+    "name":"Pear",
+    "title":"Juicy Pear \u2014 breakfast favorite",
+    "price":9.85,
+    "image":"https:\/\/placehold.co\/320x320?text=Pear"
+  },
+  {
+    "id":22,
+    "name":"Persimmon",
+    "title":"Extra Large Persimmon \u2014 for salads",
+    "price":8.76,
+    "image":"https:\/\/placehold.co\/320x320?text=Persimmon"
+  },
+  {
+    "id":23,
+    "name":"Pomegranate",
+    "title":"Zesty Pomegranate \u2014 breakfast favorite",
+    "price":4.96,
+    "image":"https:\/\/placehold.co\/320x320?text=Pomegranate"
+  },
+  {
+    "id":24,
+    "name":"Grapefruit",
+    "title":"Extra Large Grapefruit \u2014 chef\u2019s choice",
+    "price":2.29,
+    "image":"https:\/\/placehold.co\/320x320?text=Grapefruit"
+  },
+  {
+    "id":25,
+    "name":"Lime",
+    "title":"Crisp Lime \u2014 for salads",
+    "price":6.96,
+    "image":"https:\/\/placehold.co\/320x320?text=Lime"
+  },
+  {
+    "id":26,
+    "name":"Lemon",
+    "title":"Aromatic Lemon \u2014 antioxidant rich",
+    "price":6.75,
+    "image":"https:\/\/placehold.co\/320x320?text=Lemon"
+  },
+  {
+    "id":27,
+    "name":"Tangerine",
+    "title":"Handpicked Tangerine \u2014 antioxidant rich",
+    "price":2.36,
+    "image":"https:\/\/placehold.co\/320x320?text=Tangerine"
+  },
+  {
+    "id":28,
+    "name":"Clementine",
+    "title":"Aromatic Clementine \u2014 for salads",
+    "price":2.29,
+    "image":"https:\/\/placehold.co\/320x320?text=Clementine"
+  },
+  {
+    "id":29,
+    "name":"Lychee",
+    "title":"Zesty Lychee \u2014 breakfast favorite",
+    "price":9.89,
+    "image":"https:\/\/placehold.co\/320x320?text=Lychee"
+  },
+  {
+    "id":30,
+    "name":"Dragonfruit",
+    "title":"Tropical Dragonfruit \u2014 seasonal special",
+    "price":5.91,
+    "image":"https:\/\/placehold.co\/320x320?text=Dragonfruit"
+  },
+  {
+    "id":31,
+    "name":"Guava",
+    "title":"Tropical Guava \u2014 chef\u2019s choice",
+    "price":8.54,
+    "image":"https:\/\/placehold.co\/320x320?text=Guava"
+  },
+  {
+    "id":32,
+    "name":"Passionfruit",
+    "title":"Seedless Passionfruit \u2014 for snacks",
+    "price":2.9,
+    "image":"https:\/\/placehold.co\/320x320?text=Passionfruit"
+  },
+  {
+    "id":33,
+    "name":"Starfruit",
+    "title":"Fresh Starfruit \u2014 chef\u2019s choice",
+    "price":4.48,
+    "image":"https:\/\/placehold.co\/320x320?text=Starfruit"
+  },
+  {
+    "id":34,
+    "name":"Coconut",
+    "title":"Organic Coconut \u2014 for salads",
+    "price":9.19,
+    "image":"https:\/\/placehold.co\/320x320?text=Coconut"
+  },
+  {
+    "id":35,
+    "name":"Fig",
+    "title":"Handpicked Fig \u2014 seasonal special",
+    "price":3.69,
+    "image":"https:\/\/placehold.co\/320x320?text=Fig"
+  },
+  {
+    "id":36,
+    "name":"Date",
+    "title":"Tropical Date \u2014 packed with vitamins",
+    "price":4.43,
+    "image":"https:\/\/placehold.co\/320x320?text=Date"
+  },
+  {
+    "id":37,
+    "name":"Jackfruit",
+    "title":"Tropical Jackfruit \u2014 packed with vitamins",
+    "price":2.1,
+    "image":"https:\/\/placehold.co\/320x320?text=Jackfruit"
+  },
+  {
+    "id":38,
+    "name":"Durian",
+    "title":"Premium Durian \u2014 for salads",
+    "price":7.64,
+    "image":"https:\/\/placehold.co\/320x320?text=Durian"
+  },
+  {
+    "id":39,
+    "name":"Mulberry",
+    "title":"Farm\u2011fresh Mulberry \u2014 breakfast favorite",
+    "price":7.66,
+    "image":"https:\/\/placehold.co\/320x320?text=Mulberry"
+  },
+  {
+    "id":40,
+    "name":"Cranberry",
+    "title":"Zesty Cranberry \u2014 low\u2011cal snack",
+    "price":4.46,
+    "image":"https:\/\/placehold.co\/320x320?text=Cranberry"
+  },
+  {
+    "id":41,
+    "name":"Gooseberry",
+    "title":"Juicy Gooseberry \u2014 great for desserts",
+    "price":5.48,
+    "image":"https:\/\/placehold.co\/320x320?text=Gooseberry"
+  },
+  {
+    "id":42,
+    "name":"Boysenberry",
+    "title":"Organic Boysenberry \u2014 for snacks",
+    "price":8.71,
+    "image":"https:\/\/placehold.co\/320x320?text=Boysenberry"
+  },
+  {
+    "id":43,
+    "name":"Tamarind",
+    "title":"Premium Tamarind \u2014 antioxidant rich",
+    "price":2.26,
+    "image":"https:\/\/placehold.co\/320x320?text=Tamarind"
+  },
+  {
+    "id":44,
+    "name":"Plantain",
+    "title":"Tropical Plantain \u2014 kids love it",
+    "price":6.28,
+    "image":"https:\/\/placehold.co\/320x320?text=Plantain"
+  },
+  {
+    "id":45,
+    "name":"Longan",
+    "title":"Zesty Longan \u2014 kids love it",
+    "price":6.27,
+    "image":"https:\/\/placehold.co\/320x320?text=Longan"
+  },
+  {
+    "id":46,
+    "name":"Rambutan",
+    "title":"Sun\u2011ripened Rambutan \u2014 naturally sweet",
+    "price":3.1,
+    "image":"https:\/\/placehold.co\/320x320?text=Rambutan"
+  },
+  {
+    "id":47,
+    "name":"Soursop",
+    "title":"Farm\u2011fresh Soursop \u2014 for snacks",
+    "price":7.05,
+    "image":"https:\/\/placehold.co\/320x320?text=Soursop"
+  },
+  {
+    "id":48,
+    "name":"Mangosteen",
+    "title":"Organic Mangosteen \u2014 antioxidant rich",
+    "price":8.93,
+    "image":"https:\/\/placehold.co\/320x320?text=Mangosteen"
+  },
+  {
+    "id":49,
+    "name":"Blood Orange",
+    "title":"Seedless Blood Orange \u2014 breakfast favorite",
+    "price":7.86,
+    "image":"https:\/\/placehold.co\/320x320?text=Blood%20Orange"
+  },
+  {
+    "id":50,
+    "name":"Ugli Fruit",
+    "title":"Crisp Ugli Fruit \u2014 perfect for smoothies",
+    "price":3.49,
+    "image":"https:\/\/placehold.co\/320x320?text=Ugli%20Fruit"
+  }
+]

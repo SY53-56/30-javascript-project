@@ -1,0 +1,9 @@
+.btnClass{
+    padding: 5px 10px;
+    color: rgb(2, 103, 140);
+    text-align: left;
+    border-radius: 5px ;
+    background:white;
+    cursor: pointer;
+    font-weight: 500;
+}

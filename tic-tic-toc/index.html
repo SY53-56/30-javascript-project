@@ -4,20 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tic-tic-toc</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-  main{
+ 
+  .box{
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-  }
-  .box{
-    width: 500px;
-    height: 500px;
-    background-color: goldenrod;
-   
+    background-color: rgb(6, 114, 138);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
   }
   .box h1{
     text-align: center;
@@ -27,7 +24,7 @@
   .tic {
     width: 370px;
     height: 350px;
-    border: 1px solid black;
+
     margin: 10px auto;
      display: flex;
     flex-wrap: wrap;
@@ -40,42 +37,18 @@
     width: 80px;
     height: 80px;
     border: 1px solid rgb(253, 246, 246);
-  
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgb(27, 26, 26);
+  background:white;
    display: flex;
    justify-content: center;
    align-items: center;
    gap: 10px;
    padding: 10px ;
-  }
-  .value1{
- cursor: pointer;
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    border: 1px solid black;
-    padding: 1px 2px;
-    transition: all 0.3s;
-  }
-  .value2{
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    border: 1px solid black;
-    padding: 1px 2px;
-     cursor: pointer;
+   cursor: pointer;
   }
  
-  .value h1:hover{
- background-color: rgb(247, 178, 3);
-  }
 
-
-  .value1.active{
-    display: none;
-  }
-  .value2.hide{
-    display: none;
-  }
   .btn{
     display: flex;
     justify-content: center;
@@ -94,64 +67,42 @@
     background-color: indigo;
     color: white;
   }
+  .inputBox{
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+  }
 
     </style>
 </head>
 <body>        <div class="box">
             <h1>tic-tic-toc</h1>
+            <div class="inputBox">
+              <input type="text" id="p1" placeholder="player1">
+              <input type="text" id="p2" placeholder="player2">
+            </div>
             <p class="game">game start</p>
-            <div class="tic">
-                <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
-
-              <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
-              <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
-
-              <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
-
-              <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
-
-              <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
-              <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
-              <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
-              <div class="tic-box">
-                    <button class="value1">0</button> 
-                <button class="value2">*</button>
-            </div>
+              <div class="tic">
+                <div class="tic-box"></div>
+                <div class="tic-box"></div>
+                <div class="tic-box"></div>
+                <div class="tic-box"></div>
+                <div class="tic-box"></div>
+                <div class="tic-box"></div>
+                <div class="tic-box"></div>
+                <div class="tic-box"></div>
+                <div class="tic-box"></div>
+              </div>
                
-
+      <div class="btn">
+              <h1 class="status"></h1>
+            <button onclick="resetGame()">reset</button>
+    <button onclick="startGame()">Save Players</button>
             </div>
-            <div class="btn">
-              
-            <button>reset</button>
-            <button class="player1">player1</button>
-            <button class="player2">player2</button>
             </div>
+            
         </div>
-    </main>
+  
  <script src="index.js"></script>
 </body>
 </html>
