@@ -26,8 +26,7 @@ console.log("API Response:", products);
 
           <button
             class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
-            "
-          >
+                      >
             Add to Cart
           </button>
         </div>
@@ -36,24 +35,45 @@ console.log("API Response:", products);
         addToCart(product)
       })
       container.appendChild(div)
+
     });
   } catch (err) {
     console.error("Fetch error:", err);
   }
 }
 function addToCart(product) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (!product || typeof product.id === "undefined") {
+    console.error("Invalid product:", product);
+    return;
+  }
+
+  let cartData = localStorage.getItem("cart");
+  let cart = [];
+  if (cartData && cartData !== "undefined") {
+    try {
+      cart = JSON.parse(cartData);
+    } catch (e) {
+      console.error("Corrupted cart data, resetting...", e);
+      cart = [];
+    }
+  }
 
   const existing = cart.find(item => item.id === product.id);
   if (existing) {
     existing.quantity++;
   } else {
-    cart.push({ ...product, quantity: 1 });
+    cart.push({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      quantity: 1
+    });
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(`${product.title} added to cart!`);
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
 });

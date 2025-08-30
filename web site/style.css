@@ -83,6 +83,7 @@ padding: 10px;
 .btn{
   display: flex;
   gap: 20px;
+  cursor: pointer;
 }
 #plus{
   padding: 2px 10px;
@@ -105,4 +106,78 @@ padding: 10px;
 #plus:hover{
     background-color: black;
   color: white;
+}
+
+
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 8px;
+  max-width: 300px;
+  width: 500px;
+}
+.search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 17px;
+}
+.search-box svg {
+  width: 18px;
+  height: 18px;
+  fill: #666;
+  cursor: pointer; /* Makes the icon clickable */
+}
+.cart{
+  position: relative;
+}
+.cart-box{
+  display: none;
+  width: 500px;
+  height: 90vh;
+  background-color: aqua;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 20px ;
+}
+.cart-box h1{
+  font-size: 40px;
+  text-align: center;
+}
+.showCart{
+  width: 90%;
+  height: auto;
+  border:1px solid #666;
+  border-radius: 5px;
+  padding: 10px;
+}
+.showCart h1{
+ font-family: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+   display: -webkit-box;          /* create a flexible box */
+  -webkit-line-clamp: 1;         /* limit to 2 lines */
+  -webkit-box-orient: vertical;  /* set box orientation */
+  overflow: hidden;              /* hide extra text */
+  text-overflow: ellipsis; 
+}
+.showCart p{
+   font-family: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif";
+   display: -webkit-box;          /* create a flexible box */
+  -webkit-line-clamp: 2;         /* limit to 2 lines */
+  -webkit-box-orient: vertical;  /* set box orientation */
+  overflow: hidden;              /* hide extra text */
+  text-overflow: ellipsis; 
+}
+
+.delete{
+  padding: 3px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cart-item{
+   width: 300px;
+   padding: 10px;
+   border: 1px solid black;
 }

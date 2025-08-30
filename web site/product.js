@@ -1,77 +1,81 @@
+let count = 0; // cart icon me quantity store karne ke liye
+let cartCount = document.querySelector("#cart-count"); // HTML me cart count span/div pakadna
+const container = document.querySelector(".box"); // product detail show karne ke liye container
 
+const params = new URLSearchParams(window.location.search); // URL ke query params read karna
+const productId = Number(params.get("id")); // URL se product id le aana (string → number)
 
-const container = document.querySelector(".box")
+// Page load par cart count restore karna
+let cartData = JSON.parse(localStorage.getItem("cart")) || [];
+count = cartData.reduce((acc, item) => acc + item.quantity, 0); // total quantity nikalna
+cartCount.textContent = count; // cart icon par show karna
 
-const params = new URLSearchParams(window.location.search)
-const productId = Number(params.get("id"));
+async function showProduct() {
+    let res = await fetch("https://fakestoreapi.in/api/products"); // API se products fetch karna
+    let data = await res.json(); // response ko JSON mein convert karna
+    let products = data.products; // products array store karna
 
-async function showProdouct(){
-    let res = await fetch("https://fakestoreapi.in/api/products")
-    let data= await res.json()
-    let products = data.products
+    let product = products.find(p => p.id === productId); // jo id URL mein hai us product ko dhundna
+    if (product) {
+        const div = document.createElement("div"); // ek div banana jisme product info aayegi
+        div.classList.add("dataShow"); // styling ke liye class lagana
+        div.innerHTML = `
+            <img src="${product.image}" style="width:400px; height:400px; object-fit:cover;" alt="product"/>
+            <div>
+                <h1>${product.title}</h1>
+                <p>${product.description}</p>
+                <h3>Price: $${product.price}</h3>
+                <div class="btn">
+                    <button id="sub">-</button>
+                    <span id="qty">1</span>
+                    <button id="plus">+</button>
+                    <button id="add-btn">Add to cart</button>
+                </div>
+            </div>
+        `;
+        container.appendChild(div); // product details ko DOM mein add karna
 
-    let product = products.find(p=>p.id === productId)
-    if(product){
-        const div  =  document.createElement("div")
-        div.classList.add("dataShow")
-        div.innerHTML  = `
-        <img src=${product.image}  style="width:400px; height:400px; object-fit:cover;" alt="sahul"/>
-        <div style ="">
-           <h1>${product.title}</h1>
-            <p>${product.description}</p>
-            <h3>Price: $${product.price}</h3>
-         <div class="btn">         <button id="plus">+</button>      <button id="sub">-</button>   <button id="add-btn">Add cart</button></div>
-        </div>
-        `
-         container.appendChild(div)
-         let quantity = 0
-         const addBtn = document.querySelector("#add-btn")
-         const plus = document.querySelector("#plus")
-         const sub = document.querySelector("#sub")
-          
-          plus.addEventListener("click",()=>{
-            quantity++
-          })
-         sub.addEventListener("click", function() {
-    if (quantity > 1) {
-        quantity--; // only subtract if above 1
-        console.log("sub: " + quantity);
+        let quantity = 1; // default quantity 1
+        const qtyDisplay = document.querySelector("#qty");
+        const addBtn = document.querySelector("#add-btn");
+        const plus = document.querySelector("#plus");
+        const sub = document.querySelector("#sub");
+
+        plus.addEventListener("click", () => {
+            quantity++;
+            qtyDisplay.textContent = quantity;
+        });
+
+        sub.addEventListener("click", () => {
+            if (quantity > 1) {
+                quantity--;
+                qtyDisplay.textContent = quantity;
+            } else {
+                console.log("Quantity cannot go below 1");
+            }
+        });
+
+        addBtn.addEventListener("click", function() {
+            count += quantity;
+            cartCount.textContent = count;
+            addToCart(product, quantity);
+        });
     } else {
-        console.log("Quantity cannot go below 1");
+        alert("Product not found");
     }
-});
-
-              
-         addBtn.addEventListener("click",function(){
-            addToCart(product,quantity)
-         })
-    }else{
-        alert("there are no data")
-    }
-   
 }
-showProdouct()
-
-
+showProduct();
 
 function addToCart(product, quantity) {
-    // 1. Get existing cart data or start with empty array
     let oldData = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // 2. Check if product already exists in cart by ID
     let existingItem = oldData.find(item => item.id === product.id);
 
     if (existingItem) {
-        // 3. If found, just increase its quantity
         existingItem.quantity += quantity;
     } else {
-        // 4. If not found, add as new product
         oldData.push({ ...product, quantity: quantity });
     }
 
-    // 5. Save the updated cart back to localStorage
     localStorage.setItem("cart", JSON.stringify(oldData));
-
-    // 6. Log for debugging
     console.log(`Added ${quantity} x ${product.title} to cart`);
 }
